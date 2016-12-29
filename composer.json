@@ -8,6 +8,7 @@
     },
     "require": {
         "phpunit/phpunit": "^5.7",
-        "phake/phake": "^2.3"
+        "phake/phake": "^2.3",
+        "pimple/pimple": "v2.0.0"
     }
 }
