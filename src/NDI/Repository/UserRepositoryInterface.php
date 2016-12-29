@@ -3,5 +3,5 @@ namespace NDI\Repository;
 
 Interface UserRepositoryInterface
 {
-	public function save();
+	public function save($User);
 }

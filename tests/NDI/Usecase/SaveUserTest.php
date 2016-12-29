@@ -2,23 +2,22 @@
 namespace NDI\Usecase;
 
 use NDI\Entity\User;
-use NDI\Repository\SaveUserRepository;
+use NDI\Repository\ConcreteUserRepository;
+use NDI\Service\SaveUserService;
 
 class SaveUserTest extends \PHPUnit_Framework_TestCase
 {
 	/**
 	 * @test
 	 */
-	public function ユーザ作成()
+	public function ユーザ作成(/* Container $container, User $User, SaveUser $SaveUser, ConcreteUserRepository $Repository */)
 	{
-		$User = new User();
-		$SaveUser = new SaveUser();
-		$SaveUserRepository = new SaveUserRepository();
+		$User       = new User();
+		$SaveUser   = new SaveUserService();
+		$Repository = new ConcreteUserRepository();
 		
-		$SaveUser->save($User, $SaveUserRepository);
+		$SaveUser->save($User, $Repository);
 		
-// 		$this->assertFalse(false);
-		$this->assertTrue(true);
-// 		$this->assertEquals(true, true);
+		$this->assertEquals($User, $Repository->getUser());
 	}
 }
