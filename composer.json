@@ -1,0 +1,13 @@
+{
+    "name": "test",
+    "description": "test",
+    "autoload": {
+        "psr-4": {
+            "": "src"
+        }
+    },
+    "require": {
+        "phpunit/phpunit": "^5.7",
+        "phake/phake": "^2.3"
+    }
+}
