@@ -3,7 +3,8 @@ namespace NDI\Usecase;
 
 use NDI\App\Container;
 use NDI\Entity\User;
-use NDI\Repository\ConcreteUserRepository;
+// use NDI\Repository\ConcreteUserRepository;
+use NDI\Repository\UserRepositoryInterface;
 use NDI\Service\SaveUserService;
 
 class SaveUserTest extends \PHPUnit_Framework_TestCase
@@ -20,13 +21,19 @@ class SaveUserTest extends \PHPUnit_Framework_TestCase
 // 		$container->addContainer('saveuser', new ConcreteUserRepository);
 // 		print_r($container);
 		
-		
 		$User       = new User();
 		$SaveUser   = new SaveUserService();
-		$Repository = new ConcreteUserRepository();
+// 		$Repository = new ConcreteUserRepository();
 		
-		$SaveUser->save($User, $Repository);
+		$phake      = \Phake::mock(UserRepositoryInterface::class);
+// 		\Phake::when($phake)->save();
+// 		\Phake::when($mock)->getUser()->thenReturn($User);// リターンを定義
 		
-		$this->assertEquals($User, $Repository->getUser());
+		$SaveUser->save($User, $phake);
+		
+		\Phake::verify($phake, \Phake::times(1) );
+		
+// 		$this->assertEquals($User, $phake->getUser());
 	}
+	
 }
