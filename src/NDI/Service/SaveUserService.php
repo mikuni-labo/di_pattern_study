@@ -6,8 +6,8 @@ use NDI\Repository\UserRepositoryInterface;
 
 class SaveUserService
 {
-	public function save(User $User, UserRepositoryInterface $Repository)
-	{
-		return $Repository->save($User);
-	}
+    public function save(User $User, UserRepositoryInterface $Repository)
+    {
+        return $Repository->save($User);
+    }
 }

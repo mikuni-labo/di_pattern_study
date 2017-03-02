@@ -5,14 +5,14 @@ use NDI\App\Container;
 use NDI\Entity\User;
 // use NDI\Repository\ConcreteUserRepository;
 use NDI\Repository\UserRepositoryInterface;
-use NDI\Service\SaveUserService;
+use NDI\Service\DeleteUserService;
 
-class SaveUserTest extends \PHPUnit_Framework_TestCase
+class DeleteUserTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @test
      */
-    public function ユーザ作成(/* Container $container, User $User, SaveUser $SaveUser, ConcreteUserRepository $Repository */)
+    public function ユーザ削除()
     {
         /**
          * サービスコンテナ生成
@@ -21,17 +21,17 @@ class SaveUserTest extends \PHPUnit_Framework_TestCase
 //         $container->addContainer('saveuser', new ConcreteUserRepository);
 //         print_r($container);
         
-        $User       = new User();
-        $SaveUser   = new SaveUserService();
+//         $User       = new User();
+//         $SaveUser   = new DeleteUserService();
 //         $Repository = new ConcreteUserRepository();
         
-        $phake      = \Phake::mock(UserRepositoryInterface::class);
+//         $phake      = \Phake::mock(UserRepositoryInterface::class);
 //         \Phake::when($phake)->save();
 //         \Phake::when($mock)->getUser()->thenReturn($User);// リターンを定義
         
-        $SaveUser->save($User, $phake);
+//         $SaveUser->save($User, $phake);
         
-        \Phake::verify($phake, \Phake::times(1) );
+//         \Phake::verify($phake, \Phake::times(1) );
         
 //         $this->assertEquals($User, $phake->getUser());
     }

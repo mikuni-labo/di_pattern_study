@@ -3,8 +3,8 @@ namespace NDI\Entity;
 
 class User
 {
-	public function __construct()
-	{
-		//
-	}
+    public function __construct()
+    {
+        //
+    }
 }
