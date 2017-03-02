@@ -1,7 +1,7 @@
 <?php
 namespace NDI\Entity;
 
-class User implements UserInterface
+class Admin implements UserInterface
 {
     public function __construct()
     {
@@ -10,7 +10,7 @@ class User implements UserInterface
     
     public function getRole()
     {
-        return 'USER';
+        return 'ADMIN';
     }
 
 }

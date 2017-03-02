@@ -18,7 +18,7 @@ class SaveUserTest extends \PHPUnit_Framework_TestCase
          * サービスコンテナ生成
          */
 //         $container = new Container;
-//         $container->addContainer('saveuser', new ConcreteUserRepository);
+//         $container->addContainer('save.user', new ConcreteUserRepository);
 //         print_r($container);
         
         $User       = new User();
